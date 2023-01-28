@@ -1,6 +1,6 @@
 # Netscape Bookmark (File) Toolbox
 
-A collection of python scripts for parsing and converting netscape bookmark files.
+A collection of python scripts for parsing and converting Netscape bookmark files.
 
 ## Dependencies
 
@@ -35,9 +35,9 @@ the first file, but not in the second.
 
 ### extract_urls.py
 
-`extract_urls.py <netscape bookmark file>`
+`extract_href.py <Netscape bookmark file>`
 
-Extracts all URLs from a netscape bookmark file and prints them on the
+Extracts all URLs from a Netscape bookmark file and print them on the
 standard output (stdout).
 
 ### filter_200.py
@@ -61,7 +61,7 @@ before printing them on the standard output.
 
 `to_netscape_basic.py <raw file>`
 
-This script converts a raw file (URL on every line) back to the netscape bookmark format.  
+This script converts a raw file (URL on every line) back to the Netscape bookmark format.  
 Because the bookmark title have been discarded, the URL is used for this field.
 Timestamps and other metadata is discarded.
 
@@ -71,7 +71,7 @@ Timestamps and other metadata is discarded.
 
 `to_netscape_today.py <raw file>`
 
-This script converts a raw file (URL on every line) back to the netscape bookmark format.  
+This script converts a raw file (URL on every line) back to the Netscape bookmark format.
 Because the timestamps (creation, modification) as well as the bookmark title have been discarded,
 the current time repectively the URL is used for these fields.
 
@@ -79,10 +79,10 @@ the current time repectively the URL is used for these fields.
 
 ### to_netscape_full.py
 
-`to_netscape_full.py <raw file> <netscape bookmark file> [netscape bookmark file]...`
+`to_netscape_full.py <raw file> <Netscape bookmark file> [Netscape bookmark file]...`
 
-This script converts a raw file (URL on every line) back to the netscape bookmark format.  
-The netscape bookmark files are being crawled for metadata in the order given by the
+This script converts a raw file (URL on every line) back to the Netscape bookmark format.  
+The Netscape bookmark files are being crawled for metadata in the order given by the
 command line arguments. The first match is used. If no match is found, timestamps are ignored
 and the title will be the URL.
 
@@ -92,5 +92,7 @@ Print all the URLs in the bookmark file to the standard output which are still r
 and remove duplicates among them. Discard all errors.
 
 ```
-$ ./extract_urls.py bookmarks.html | ./rm_dups_and_sort.py /dev/stdin | ./filter_200.py /dev/stdin 2> /dev/null
+$ ./extract_href.py bookmarks.html > bookmarks.raw
+$ ./rm_dups_and_sort.py bookmarks.raw > unique.raw
+$ ./filter_200.py unique.raw > /reachable.raw 2> /dev/null
 ```
