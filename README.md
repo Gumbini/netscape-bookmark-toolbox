@@ -1,6 +1,6 @@
 # Netscape Bookmark (File) Toolbox
 
-A collection of python scripts for parsing and converting netscape bookmark files.
+A collection of python scripts for parsing and converting Netscape bookmark files.
 
 ## Dependencies
 
@@ -35,9 +35,9 @@ the first file, but not in the second.
 
 ### extract_href.py
 
-`extract_href.py <netscape bookmark file>`
+`extract_href.py <Netscape bookmark file>`
 
-Extracts all URLs from a netscape bookmark file and print them on the
+Extracts all URLs from a Netscape bookmark file and print them on the
 standard output (stdout).
 
 ### filter_200.py
@@ -61,7 +61,7 @@ before printing them on the standard output.
 
 `to_netscape.py <raw file>`
 
-This script converts a raw file (URL on every line) back to the netscape bookmark format.
+This script converts a raw file (URL on every line) back to the Netscape bookmark format.
 Because the timestamps (creation, modification) as well as the bookmark title have been discarded,
 the current time repectively the URL is used for these fields.
 
