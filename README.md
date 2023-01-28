@@ -57,16 +57,34 @@ in front of it. Discard any errors by appending `2> /dev/null`.
 As the name suggests, this script removes duplicate URLs and sorts everything
 before printing them on the standard output.
 
-### to_netscape.py
+### to_netscape_basic.py
 
-`to_netscape.py <raw file>`
+`to_netscape_basic.py <raw file>`
 
-This script converts a raw file (URL on every line) back to the netscape bookmark format.
+This script converts a raw file (URL on every line) back to the netscape bookmark format.  
+Because the bookmark title have been discarded, the URL is used for this field.
+Timestamps and other metadata is discarded.
+
+*If you are unsatisfied with this behavior, scroll ahead.*
+
+### to_netscape_today.py
+
+`to_netscape_today.py <raw file>`
+
+This script converts a raw file (URL on every line) back to the netscape bookmark format.  
 Because the timestamps (creation, modification) as well as the bookmark title have been discarded,
 the current time repectively the URL is used for these fields.
 
-*If you are unsatisfied with this behavior, patch the scripts yourself or wait a little,
-because I am actively working on an improvent on this situation.*
+*If you are unsatisfied with this behavior, scroll ahead.*
+
+### to_netscape_full.py
+
+`to_netscape_full.py <raw file> <netscape bookmark file> [netscape bookmark file]...`
+
+This script converts a raw file (URL on every line) back to the netscape bookmark format.  
+The netscape bookmark files are being crawled for metadata in the order given by the
+command line arguments. The first match is used. If no match is found, timestamps are ignored
+and the title will be the URL.
 
 ## Example (combined)
 
